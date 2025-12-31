@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/output.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-straight/css/uicons-solid-straight.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-chubby/css/uicons-regular-chubby.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/3.0.0/uicons-bold-straight/css/uicons-bold-straight.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/3.0.0/uicons-brands/css/uicons-brands.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <title>LUMIATECH</title>
+</head>
+<body class="relative dark:bg-dark-main-color bg-light-color text-black dark:text-[#ffffffb3] dark duration-150">
+    <div class="overlay close-video absolute w-full h-full top-0 left-0 bg-overlay z-998 duration-120 opacity-0 hidden"></div>
+    <div class="to-up fixed right-0 bottom-0 z-9999 flex-center cursor-pointer m-5 py-3 px-3 rounded-md duration-200 hover:shadow-dark-hover-box dark:hover:shadow-dark-hover-box bg-main-color text-white">
+        <ion-icon name="chevron-up-outline"></ion-icon>
+    </div>
+    <header class="fixed w-full top-0 left-0 duration-80 z-9999">
+        <div class="container py-6 flex items-center justify-between duration-80 text-[16px]">
+            <a href="index.html" aria-label="Home" class="w-30 sm:w-40 lg:w-43">
+                <img class="logo w-full" src="images/logo/logo.webp" alt="">
+            </a>
+            <div id="nav" class="flex items-center tb:justify-between gap-x-9">
+                <nav class="z-999 flex items-center space-x-12 py-4 duration-150 max-[992px]:flex-col max-[992px]:items-start max-[992px]:absolute max-[992px]:right-0 max-[992px]:top-[71px] max-[992px]:w-[250px] max-[992px]:px-6 max-[992px]:rounded max-[992px]:shadow-md max-[992px]:dark:bg-dark-main-color max-[992px]:bg-gray-200 max-[992px]:hidden max-[992px]:opacity-0">
+                    <a class="active" href="#home">Accueil</a>
+                    <a href="#about">Á propos de nous</a>
+                    <a href="#services">Services</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="contact.html">Contact</a>
+                    <!-- <div class="sign md:hidden flex items-center w-full justify-between mt-5">
+                        <a href="sign-in.html" class="text-nowrap bg-gray-500">Sign In</a>
+                        <a href="sign-up.html" class="text-nowrap bg-main-color">Sign Up</a>
+                    </div> -->
+                </nav>
+                <!-- <div class="sign hidden md:flex items-center space-x-7 text-black dark:text-white mr-5">
+                    <a href="sign-in.html" class="text-nowrap">Sign In</a>
+                    <a href="sign-up.html" class="text-nowrap bg-main-color text-white py-3 px-8 md:px-9 lg:px-6 font-medium rounded-[3px] hover:contrast-125 duration-125">Sign Up</a>
+                </div> -->
+            </div>
+            <div class="icons flex-center gap-x-2 tb:gap-x-6">
+                <i class="fi fi-rr-menu-burger text-2xl translate-y-1 cursor-pointer burger min-[992px]:hidden"></i>
+                <a href="https://web.facebook.com/profile.php?id=61570029997839" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+                <a href="https://www.instagram.com/lumiatechnologie?igsh=MWdocnZlZ21raXVleg==" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+                <a href="https://www.linkedin.com/company/lumiatechnologie/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <ion-icon name="logo-linkedin"  class=" border-r-1 border-[#ffffffb3] pr-6"></ion-icon>
+                </a>
+                <i class="theme fi fi-rc-moon max-tb:translate-y-1"></i>
+            </div>
+        </div>
+    </header>
+    <main id="home" class="relative h-[100vh] max-[575px]:!pt-[150px] glow-effect dark:glow-effect-dark">
+        <div class="container flex-center flex-col pb-16 pt-[60px] md:pt-[70px] md:pb-[120px] xl:pt-[140px] xl:pb-[160px] w-full">
+            <div class="max-w-[800px] text-center mb-15">
+                <h2 class="mb-5 text-black dark:text-white text-3xl sm:text-4xl md:text-6xl font-bold !leading-tight">Transformez vos idées en <span class="bg-gradient-to-r from-blue-500 to-violet-indigo bg-clip-text text-transparent">solutions digitales</span> innovantes</h2>
+                <p class="dark:text-color-alt sm:text-lg md:text-xl leading-relaxed">LUMIA TECHNOLOGIE Votre partenaire pour des créations digitales innovantes et sur mesure</p>
+            </div>
+            <a href="#contact" class="px-8 py-4 rounded-sm font-bold text-white duration-200 hover:shadow-dark-hover-box bg-gradient-to-r from-blue-500 to-violet-indigo">Contactez-nous</a>
+            <div class="mouse w-[40px] h-[25px] border-2 rounded-[50px] rotate-90 mt-15 flex-center">
+                <div class="wheel w-[15px] h-[4px] rounded-[50px] bg-main-color translate-y-[-0.5px]"></div>
+            </div>
+        </div>
+    </main>
+    <section id="about" class="bg-[#f9fafb] dark:bg-[rgba(2,6,23,1)]">
+        <div class="container">
+            <div class="part-1 flex justify-between items-center max-tb:flex-col gap-14 pt-50 border-b-1 dark:border-white/[.15] border-gray-300 pb-16 md:pb-20 lg:pb-28">
+                <div class="text">
+                    <div class="title tb:!text-left !mb-[40px]">
+                    <h2>Notre Expertise à Votre Service</h2>
+                    <p>Description Nous concevons des solutions digitales sur mesure pour les entreprises ambitieuses, allant du web au mobile.</p>
+                    </div>
+                    <ul class="checklist grid min-[575px]:grid-cols-2 tb:grid-cols-1 min-[75rem]:grid-cols-2 grid-rows-3 gap-y-5 gap-x-10 w-fit max-tb:mx-auto max-[35.938rem]:mx-0">
+                        <li>
+                            <div>
+                            <script src="https://cdn.lordicon.com/lordicon.js"></script>
+                            <lord-icon
+                                src="https://cdn.lordicon.com/fsstjlds.json"
+                                trigger="loop"
+                                delay="500"
+                                stroke="bold"
+                                colors="primary:#4b6cf7"
+                                style="width:25px;height:25px">
+                            </lord-icon>
+                            </div>
+                            <span>Développement Web et Mobile</span>
+                        </li>
+                        <li>
+                            <div>
+                            <script src="https://cdn.lordicon.com/lordicon.js"></script>
+                            <lord-icon
+                                src="https://cdn.lordicon.com/fsstjlds.json"
+                                trigger="loop"
+                                delay="500"
+                                stroke="bold"
+                                colors="primary:#4b6cf7"
+                                style="width:25px;height:25px">
+                            </lord-icon>
+                            </div>
+                            <span>E-commerce</span>
+                        </li>
+                        <li>
+                            <div>
+                            <script src="https://cdn.lordicon.com/lordicon.js"></script>
+                            <lord-icon
+                                src="https://cdn.lordicon.com/fsstjlds.json"
+                                trigger="loop"
+                                delay="500"
+                                stroke="bold"
+                                colors="primary:#4b6cf7"
+                                style="width:25px;height:25px">
+                            </lord-icon>
+                            </div>
+                            <span>UX/UI Design</span>
+                        </li>
+                        <li>
+                            <div>
+                            <script src="https://cdn.lordicon.com/lordicon.js"></script>
+                            <lord-icon
+                                src="https://cdn.lordicon.com/fsstjlds.json"
+                                trigger="loop"
+                                delay="500"
+                                stroke="bold"
+                                colors="primary:#4b6cf7"
+                                style="width:25px;height:25px">
+                            </lord-icon>
+                            </div>
+                            <span>Backend & API</span>
+                        </li>
+                        <li>
+                            <div>
+                            <script src="https://cdn.lordicon.com/lordicon.js"></script>
+                            <lord-icon
+                                src="https://cdn.lordicon.com/fsstjlds.json"
+                                trigger="loop"
+                                delay="500"
+                                stroke="bold"
+                                colors="primary:#4b6cf7"
+                                style="width:25px;height:25px">
+                            </lord-icon>
+                            </div>
+                            <span>Solutions Métier</span>
+                        </li>
+                        <li>
+                            <div>
+                            <script src="https://cdn.lordicon.com/lordicon.js"></script>
+                            <lord-icon
+                                src="https://cdn.lordicon.com/fsstjlds.json"
+                                trigger="loop"
+                                delay="500"
+                                stroke="bold"
+                                colors="primary:#4b6cf7"
+                                style="width:25px;height:25px">
+                            </lord-icon>
+                            </div>
+                            <span>Accompagnement Stratégique</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="pic max-w-[500px] max-tb:mx-auto">
+                    <img class="about-img-1 max-w-full" src="images/about/about-image-dark.svg" alt="">
+                </div>
+            </div>
+            <div class="part-2 flex items-center max-tb:flex-col pt-16 md:pt-20 lg:pt-28">
+                <div class="pic max-w-[500px] mr-50 max-tb:mx-auto max-tb:mb-12">
+                    <img class="about-img-2 max-w-full" src="images/about/about-image-2-dark.svg" alt="">
+                </div>
+                <div class="text max-w-[470px]">
+                    <fieldset>
+                        <legend>
+                            <ion-icon name="caret-forward-outline"></ion-icon>
+                            <h2>Quelle est l'identité et la mission de Lumiatechnologie ?</h2>
+                        </legend>
+                        <p>Lumiatechnologie est une agence premium basée entre Saint-Étienne et Casablanca. Notre mission est de transformer votre vision en outils digitaux haut de gamme, fiables et évolutifs. Nous sommes des experts full-stack qui travaillent avec une approche orientée résultats.</p>
+                    </fieldset>
+                    <fieldset>
+                        <legend>
+                            <ion-icon name="caret-forward-outline"></ion-icon>
+                            <h2>Quelles sont les spécialités et technologies utilisées ?</h2>
+                        </legend>
+                        <p>Front-end, nous maîtrisons React, Tailwind, et Next.js. Pour le Backend, nous utilisons Symfony, Spring Boot et Node.js. Nos bases de données incluent MySQL, PostgreSQL, Oracle, et MongoDB. Notre équipe est full-stack et maîtrise un large éventail de technologies pour s'adapter à chaque projet.</p>
+                    </fieldset>
+                    <fieldset>
+                        <legend>
+                            <ion-icon name="caret-forward-outline"></ion-icon>
+                            <h2>Avec quel type d'entreprises travaillez-vous ?</h2>
+                        </legend>
+                        <p>Nous sommes une agence premium dédiée aux entreprises ambitieuses. Nous accompagnons tous les projets complexes nécessitant une expertise full-stack et une approche orientée résultats.</p>
+                    </fieldset>
+                    <fieldset>
+                        <legend class="!mb-0">
+                            <ion-icon name="caret-forward-outline"></ion-icon>
+                            <h2>Comment se déroule le processus de développement ?</h2>
+                        </legend>
+                        <p>Notre processus de développement se déroule en plusieurs étapes : analyse des besoins, conception, développement, tests, déploiement et maintenance. Nous utilisons des méthodologies agiles pour assurer une communication transparente et une collaboration efficace avec nos clients.</p>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="services">
+        <div class="container">
+            <div class="title">
+                <h2>Services</h2>
+                <p>Nous concevons des solutions digitales haut de gamme et sur mesure pour propulser votre entreprise vers l'avenir numérique.</p>
+            </div>
+            <div class="services grid gap-y-14 gap-x-8 grid-cols-1 md:grid-cols-2 tb:grid-cols-3 grid-rows-2">
+                <div class="box">
+                    <div class="icon"><ion-icon name="browsers"></ion-icon></div>
+                    <h3>Développement Web</h3>
+                    <p>Création de sites vitrines, plateformes corporate, institutionnelles, et applications web complexes sur mesure.</p>
+                </div>
+                <div class="box">
+                    <div class="icon"><ion-icon name="bag-check"></ion-icon></div>
+                    <h3>E-commerce</h3>
+                    <p>Conception de boutiques e-commerce assurant des paiements sécurisés, multilinguisme, et optimisation de la conversion pour une expérience client maximale.</p>
+                </div>
+                <div class="box">
+                    <div class="icon"><ion-icon name="apps"></ion-icon></div>
+                    <h3>Développement d'Applications Mobiles</h3>
+                    <p>Conception et réalisation d'applications performantes, élégantes, et fluides sur les systèmes iOS et Android.</p>
+                </div>
+                <div class="box">
+                    <div class="icon"><ion-icon name="code-slash"></ion-icon></div>
+                    <h3>Backend & Architecture API</h3>
+                    <p>Mise en place de systèmes de Microservices, d'API, et de sécurité avancée pour garantir des plateformes robustes et évolutives.</p>
+                </div>
+                <div class="box">
+                    <div class="icon"><ion-icon name="bar-chart"></ion-icon></div>
+                    <h3>Solutions Métier Sur Mesure</h3>
+                    <p>Développement de logiciels dédiés (CRM, ERP, gestion RH, dashboards) pour optimiser vos processus internes et votre productivité.</p>
+                </div>
+                <div class="box">
+                    <div class="icon"><ion-icon name="trending-up"></ion-icon></div>
+                    <h3>Conseil & Stratégie Digitale</h3>
+                    <p>Audit, modernisation, et accompagnement stratégique pour l'optimisation de vos systèmes et la réussite de votre transformation digitale.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="clients" class="dark:bg-dark-alt-color bg-white relative">
+        <div class="container">
+            <img class="w-[250px] absolute bottom-0 left-0 opacity-30" src="images/wavy-lines.png" alt="">
+            <div class="title">
+                <h2>Ce que nos clients disent de nous</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="box">
+                    <div class="stars">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                    </div>
+                    <p>“J'ai confié la création de mon site achshop.ma à cette équipe, et je suis plus que satisfait du résultat. Le site est à la fois élégant et très fonctionnel, offrant une expérience d'achat fluide pour mes clients. L'intégration de publicités Facebook Ads.</p>
+                    <div class="profile">
+                        <div class="text">
+                            <h4>Abderezak</h4>
+                            <span>Fondateur d'AchShop</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="stars">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                    </div>
+                    <p>“J'ai fait appel à cette équipe pour créer mon site web, et je suis ravie du résultat ! Le site est professionnel et facile à naviguer. Depuis le lancement, j'ai observé une nette augmentation des prises de rendez-vous et un engagement accru de mes patients.</p>
+                    <div class="profile">
+                        <div class="text">
+                            <h4>Dr. Mounia Mekouar</h4>
+                            <span>Médecin dentiste</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="stars">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                    </div>
+                    <p>“Travailler avec cette équipe a été un véritable plaisir. Ils ont parfaitement compris nos besoins et ont créé un site moderne, intuitif et performant. Le processus a été fluide, avec une excellente communication et des délais respectés.</p>
+                    <div class="profile">
+                        <div class="text">
+                            <h4>Nabil</h4>
+                            <span>CEO de WBDS PLC</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="portfolio" class="bg-white dark:bg-dark-alt-color">
+        <div class="container">
+            <div class="title">
+                <h2>Nos Réalisations</h2>
+                <p>Découvrez nos projets récents. Chaque réalisation illustre notre engagement envers l'excellence technique et le design haut de gamme.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 ">
+                <div class="box">
+                    <div class="pic">
+                        <img src="images/logo/Dr.Mekouar Mounia.webp" alt="">
+                        <span>Site Vitrine</span>
+                        <a href="https://drmekouarmounia.com" target="_blank" rel="noopener noreferrer" title="Ouvrir le site Dr Mekouar Mounia dans un nouvel onglet"><ion-icon name="open-outline"></ion-icon></a>
+                    </div>
+                    <div class="p-8">
+                        <div class="techs">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>jquery</span>
+                            <span>php</span>
+                        </div>
+                        <h4>Dr Mekouar Mounia</h4>
+                        <p>Site vitrine professionnelle offrant des prestations en chirurgie dentaire à Casablanca.</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="pic">
+                        <img src="images/logo/Chama Negoce.webp" alt="">
+                        <span>E-commerce</span>
+                        <a href="https://chamanegocetools.ma" target="_blank" rel="noopener noreferrer" title="Ouvrir le site Chama Negoce dans un nouvel onglet"><ion-icon name="open-outline"></ion-icon></a>
+                    </div>
+                    <div class="p-8">
+                        <div class="techs">
+                            <span>wordpress</span>
+                        </div>
+                        <h4>Chama Negoce</h4>
+                        <p>Boutique en ligne d'outillage professionnel, proposant des outils, consommables et équipements pour bricolage et industrie.</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="pic">
+                        <img src="images/logo/Syndexpress.webp" alt="">
+                        <span>SaaS</span>
+                        <!-- <a href="#"  target="_blank"><ion-icon name="open-outline"></ion-icon></a> -->
+                    </div>
+                    <div class="p-8">
+                        <div class="techs">
+                            <span>react</span>
+                            <span>react native</span>
+                            <span>springboot</span>
+                            <span>aws</span>
+                        </div>
+                        <h4>SYNDEXPRESS</h4>
+                        <p>Mise en ligne du MVP de cette solution SaaS dédiée à la gestion syndicale moderne au Maroc.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="button flex-center">
+                <a href="./portfolio.html" class="px-8 py-4 rounded-sm font-bold text-white bg-main-color dark:bg-main-color duration-200 hover:shadow-dark-hover-box dark:hover:shadow-dark-hover-box mt-15">Voir Tous les Projets</a>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="w-full">
+        <div class="container w-full">
+            <div class="flex max-tb:flex-wrap gap-8">
+                <form action="contact.php" method="POST" class="ticket dark:bg-dark-box bg-white rounded-sm shadow-box-shadow py-15 px-13 sm:px-10 xl:px-13 w-full">
+                    <div class="title !mb-18">
+                        <h2 class="!text-3xl !mb-2">Prêt à transformer votre vision ?</h2>
+                        <p class="!text-base">Parlez-nous de votre projet ! Notre équipe est prête à vous accompagner dans la concrétisation de vos idées.</p>
+                    </div>
+                    <div class="md:flex mb-16 gap-4 w-full">
+                        <div class="name max-md:mb-16 md:w-1/2">
+                            <label for="name">Votre Nom</label>
+                            <input type="text" id="name" name="name" placeholder="Entrez votre nom" required>
+                        </div>
+                        <div class="email max-md:mb-16 md:w-1/2">
+                            <label for="email">Votre Email</label>
+                            <input type="email" id="email" name="email" placeholder="Entrez votre email" required>
+                        </div>
+                    </div>
+                    <div class="md:flex mb-16 gap-4 w-full">
+                        <div class="name max-md:mb-16 md:w-1/2">
+                            <label for="phone">Votre Téléphone</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Entrez votre téléphone" required>
+                        </div>
+                        <div class="email max-md:mb-16 md:w-1/2">
+                            <label for="service">Services</label>
+                                <input type="text" id="service" name="service" placeholder="Choisir ou saisir un service" list="service-options" required>
+                                <datalist id="service-options">
+                                    <option value="UX/UI Design"></option>
+                                    <option value="Développement Web"></option>
+                                    <option value="Applications Mobiles"></option>
+                                    <option value="Formation"></option>
+                                    <option value="Autre"></option>
+                                </datalist>
+                        </div>
+                    </div>
+                    <div class="message">
+                        <label for="message">Votre Message</label>
+                        <textarea id="message" name="message" placeholder="Entrez votre message" class="mb-8 h-[150px] resize-none" required></textarea>
+                    </div>
+                    <input type="submit" value="Envoyer votre demande" class="cursor-pointer duration-200 hover:shadow-dark-hover-box dark:hover:shadow-dark-hover-box !bg-main-color !text-white !w-fit !py-3 !px-9 font-medium hover:contrast-125">
+                </form>
+                <!-- <form action="" class="subscribe flex-center flex-col dark:bg-dark-box bg-white rounded-sm shadow-box-shadow w-full lg:w-5/12 xl:w-4/12 px-11 py-15">
+                    <div class="title pb-12 !mb-11 border-b-1 border-gray-300 dark:border-gray-700">
+                        <h2 class="!text-2xl !mb-4">Subscribe to receive future updates</h2>
+                        <p class="text-base">Lorem ipsum dolor sited Sed ullam corper consectur adipiscing Mae ornare massa quis lectus.</p>
+                    </div>
+                    <input type="text" id="name" placeholder="Enter your Name">
+                    <input type="text" id="email" placeholder="Enter your Email">
+                    <input type="submit" value="Subscribe" class="cursor-pointer !bg-main-color !text-white !py-3 !px-9 font-medium duration-150 hover:contrast-125">
+                </form> -->
+            </div>
+        </div>
+    </section>
+    <footer class="bg-white dark:bg-dark-box">
+        <div class="container">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:flex gap-10 sm:gap-y-15 py-15 tb:pt-25">
+                <div class="social lg:w-5/12">
+                    <img src="images/logo/logo.webp" alt="" class="logo w-[350px]">
+                    <p class="max-w-[360px] mb-8">Votre partenaire de confiance pour des créations digitales innovantes et sur mesure. Transformons ensemble vos idées en réalité.</p>
+                    <div class="flex items-center gap-x-6">
+                        <a href="https://web.facebook.com/profile.php?id=61570029997839" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                            <ion-icon name="logo-facebook"></ion-icon>
+                        </a>
+                        <a href="https://www.instagram.com/lumiatechnologie?igsh=MWdocnZlZ21raXVleg==" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <ion-icon name="logo-instagram"></ion-icon>
+                        </a>
+                        <a href="https://www.linkedin.com/company/lumiatechnologie/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="mb-3">
+                            <ion-icon name="logo-linkedin"></ion-icon>
+                        </a>
+                    </div>
+                </div>
+                <div class="links">
+                    <h4>Liens utiles</h4>
+                    <a href="#contact">Contact</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#services">Services</a>
+                    <a href="#about">Á propos de nous</a>
+                </div>
+                <div class="services links">
+                    <h4>Services</h4>
+                    <a href="#services">UX/UI Design</a>
+                    <a href="#services">Développement Web</a>
+                    <a href="#services">Applications Mobiles</a>
+                    <a href="#services">Formation</a>
+                </div>
+                <div class="contact links">
+                    <h4>Contact</h4>
+                    <a href="mailto:contact@lumiatechnologie.com" class="truncate">contact@lumiatechnologie.com</a>
+                    <a href="tel:+33666197344">+33 666 197 344</a>
+                </div>
+            </div>
+            <div class="h-px w-full bg-gradient-to-r from-transparent via-[#D2D8E183] dark:via-[#959CB183] to-transparent"></div>
+            <div class="credits flex-center max-tb:flex-col gap-2 w-full py-8 max-[360px]:text-[14px]">
+                <div class="flex">
+                    <a href="https://lumiatechnologie.com/">© 2025 LUMIA TECHNOLOGIE. Tous droits réservés.</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="JS/script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

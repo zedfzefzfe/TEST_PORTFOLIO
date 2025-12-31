@@ -1,0 +1,1556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="CSS/output.css">
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css">
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css">
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css">
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css">
+  <link rel="stylesheet"
+    href="https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-straight/css/uicons-solid-straight.css">
+  <link rel="stylesheet"
+    href="https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-chubby/css/uicons-regular-chubby.css">
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/3.0.0/uicons-bold-straight/css/uicons-bold-straight.css">
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/3.0.0/uicons-brands/css/uicons-brands.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+  <title>LUMIATECH</title>
+
+  <style>
+    /* ================= PORTFOLIO HERO ================= */
+    .portfolio-hero {
+      min-height: 100vh;
+      padding: 180px 80px 120px;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(1200px 600px at 20% 0%, #111827, #0b0d12 60%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* subtle grain */
+    .portfolio-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+      opacity: .06;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Eyebrow */
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 13px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      opacity: .55;
+      margin-bottom: 28px;
+    }
+
+    /* Title */
+    .hero-title {
+      font-size: clamp(48px, 9vw, 120px);
+      font-weight: 700;
+      letter-spacing: -0.05em;
+      line-height: .95;
+    }
+
+    .hero-title span {
+      color: #60a5fa;
+    }
+
+    /* Description */
+    .hero-description {
+      margin-top: 36px;
+      max-width: 520px;
+      font-size: 18px;
+      line-height: 1.6;
+      opacity: .65;
+    }
+
+    /* Scroll indicator */
+    .hero-scroll {
+      margin-top: 120px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 12px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      opacity: .5;
+    }
+
+    .hero-scroll .line {
+      width: 120px;
+      height: 1px;
+      background: linear-gradient(to right, #60a5fa, transparent);
+    }
+
+    /* ================= RESPONSIVE ================= */
+    @media (max-width: 900px) {
+      .portfolio-hero {
+        padding: 140px 24px 100px;
+      }
+
+      .hero-scroll {
+        margin-top: 80px;
+      }
+    }
+
+    /* ================= COMPACT PORTFOLIO GRID ================= */
+    .portfolio-grid {
+      padding: 120px 0 160px;
+    }
+
+    .portfolio-grid .container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px 32px;
+    }
+
+    /* Card */
+    .work-card {
+      cursor: pointer;
+    }
+
+    /* Media */
+    .work-media {
+      aspect-ratio: 4 / 3;
+      border-radius: 18px;
+      overflow: hidden;
+      background: #111;
+    }
+
+    .work-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1);
+      transition: transform .8s cubic-bezier(.16, 1, .3, 1);
+    }
+
+    /* Meta */
+    .work-meta {
+      margin-top: 14px;
+    }
+
+    .work-meta span {
+      font-size: 11px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      opacity: .5;
+    }
+
+    .work-meta h3 {
+      margin-top: 6px;
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: -.02em;
+    }
+
+    /* Hover */
+    .work-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .work-card:hover h3 {
+      opacity: .85;
+    }
+
+    /* ================= RESPONSIVE ================= */
+    @media (max-width: 1024px) {
+      .portfolio-grid .container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .portfolio-grid .container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ================= DISTRIBUTION GRID ================= */
+
+
+    .distribution-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    /* Card */
+    .dist-card {
+      position: relative;
+      transform-origin: center;
+    }
+
+    /* Media */
+    .dist-media {
+      aspect-ratio: 4 / 3;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #0b0d12;
+      box-shadow: 0 10px 30px -10px rgba(1, 107, 212, 0.3);
+      transition: box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .dist-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1);
+      transition: transform .8s cubic-bezier(.16, 1, .3, 1);
+    }
+
+    /* Info */
+    .dist-info {
+      margin-top: 12px;
+    }
+
+    .dist-info span {
+      font-size: 11px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      opacity: .45;
+    }
+
+    .dist-info h3 {
+      margin-top: 6px;
+      font-size: 17px;
+      font-weight: 500;
+      letter-spacing: -.02em;
+    }
+
+    /* Hover micro-life */
+    .dist-card:hover img {
+      transform: scale(1.06);
+    }
+
+    .dist-card:hover .dist-media {
+      box-shadow: 0 20px 50px -10px rgba(1, 107, 212, 0.5);
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .distribution-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .distribution-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ================= DISTRIBUTION ================= */
+    .portfolio-distribution {
+      padding: 140px 0 10px;
+      overflow: hidden;
+      background: radial-gradient(circle, #0a5adb7c, transparent 60%);
+    }
+
+    .distribution-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      position: relative;
+    }
+
+    /* Card */
+    .dist-card {
+      transform-origin: center;
+      will-change: transform, opacity;
+    }
+
+    /* Media */
+    .dist-media {
+      aspect-ratio: 4 / 3;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #0b0d12;
+    }
+
+    .dist-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .8s cubic-bezier(.16, 1, .3, 1);
+    }
+
+    /* Info */
+    .dist-info {
+      margin-top: 10px;
+    }
+
+    .dist-info span {
+      font-size: 11px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      opacity: .45;
+    }
+
+    .dist-info h3 {
+      margin-top: 6px;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    /* Hover */
+    .dist-card:hover img {
+      transform: scale(1.06);
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .distribution-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .distribution-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ================= CINEMATIC PARTNERS ================= */
+    .partners-cinematic {
+      padding: 180px 0 200px;
+      background: radial-gradient(1200px 600px at 20% 0%, #111827, #0b0d12 60%);
+      overflow: hidden;
+    }
+
+    .partners-header {
+      max-width: 820px;
+    }
+
+    .partners-header h2 {
+      font-size: clamp(42px, 6vw, 72px);
+      font-weight: 600;
+      letter-spacing: -0.04em;
+    }
+
+    .partners-header h2 span {
+      color: #0159cd;
+    }
+
+    .partners-header p {
+      margin-top: 24px;
+      font-size: 18px;
+      line-height: 1.6;
+      opacity: .7;
+    }
+
+    /* Stage */
+    .partners-stage {
+      margin-top: 140px;
+      display: flex;
+      flex-direction: column;
+      gap: 56px;
+      position: relative;
+    }
+
+    /* Rows */
+    .partners-row {
+      display: flex;
+      gap: 120px;
+      align-items: center;
+      will-change: transform;
+    }
+
+    .partners-row img {
+      height: clamp(80px, 7vw, 120px);
+      /* BIG & CONFIDENT */
+      max-width: 240px;
+      object-fit: contain;
+
+      opacity: 1;
+      filter: none;
+      /* FULL COLOR */
+      transform: scale(1);
+
+      transition:
+        transform .45s cubic-bezier(.16, 1, .3, 1),
+        opacity .3s ease;
+    }
+
+    .partners-row img {
+      animation: floatLogo 8s ease-in-out infinite;
+    }
+
+    @keyframes floatLogo {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-6px);
+      }
+    }
+
+
+    /* Hover magic */
+    .partners-row img:hover {
+      opacity: 1;
+      filter: grayscale(0);
+      transform: scale(1.06);
+    }
+
+    /* Offset rhythm */
+    .row-1 {
+      transform: translateX(-10%);
+    }
+
+    .row-2 {
+      transform: translateX(5%);
+    }
+
+    .row-3 {
+      transform: translateX(-15%);
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .partners-row {
+        gap: 64px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .partners-stage {
+        gap: 40px;
+      }
+
+      .partners-row {
+        gap: 40px;
+      }
+
+      .partners-row img {
+        height: 32px;
+      }
+    }
+
+    .hero-agency {
+      padding: 140px 80px;
+      background: radial-gradient(1200px 600px at 20% 0%, #111827, #0b0d12 60%);
+    }
+
+    .hero-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    /* VISUAL */
+    .hero-visual img {
+      width: 100%;
+      max-width: 520px;
+      margin: auto;
+      display: block;
+    }
+
+    /* CONTENT */
+    .hero-content {
+      max-width: 560px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      margin-bottom: 20px;
+      padding: 8px 16px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: #016bd4;
+      background: rgba(255, 159, 10, .12);
+      border-radius: 999px;
+    }
+
+    /* Project Modal Upgrade */
+    .project-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      pointer-events: none;
+      background: rgba(0, 0, 0, 0.4);
+      perspective: 2000px;
+    }
+
+    .project-modal.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .pm-content {
+      width: 95%;
+      max-width: 1200px;
+      height: 85vh;
+      background: #0b0d12;
+      border-radius: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      overflow: hidden;
+      box-shadow: 0 100px 150px -30px rgba(0, 0, 0, 0.8);
+      transform-style: preserve-3d;
+    }
+
+    .pm-media {
+      background: #000;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pm-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .pm-details {
+      padding: 80px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: linear-gradient(135deg, #111827 0%, #0b0d12 100%);
+      position: relative;
+    }
+
+    .pm-close {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 28px;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 100;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .pm-close:hover {
+      background: #fff;
+      color: #000;
+      transform: rotate(90deg) scale(1.1);
+    }
+
+    /* Background scale effect */
+    header,
+    section,
+    footer {
+      transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1), filter 1s cubic-bezier(0.16, 1, 0.3, 1), opacity 1s cubic-bezier(0.16, 1, 0.3, 1);
+      transform-origin: center center;
+    }
+
+    @media (max-width: 1024px) {
+      .pm-content {
+        grid-template-columns: 1fr;
+        height: 90vh;
+        overflow-y: auto;
+      }
+
+      .pm-media {
+        height: 40vh;
+      }
+
+      .pm-details {
+        padding: 50px 30px;
+      }
+    }
+
+
+
+
+
+    .results-section {
+      padding: 100px 8%;
+      background: radial-gradient(circle, #0055ff00, transparent 60%),
+        transparent 60%;
+    }
+
+    .results-container {
+      max-width: 1400px;
+      margin: auto;
+    }
+
+    .results-eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 12px;
+      color: #6b7280;
+      margin-bottom: 16px;
+    }
+
+    .results-title {
+      font-size: clamp(36px, 5vw, 64px);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 80px;
+    }
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 40px;
+    }
+
+    .result-card {
+      position: relative;
+      padding: 40px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(12px);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .result-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: linear-gradient(135deg, #0055ff, #00d4ff);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: -1;
+    }
+
+    .result-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 40px 120px rgba(0, 85, 255, 0.25);
+    }
+
+    .result-card:hover::after {
+      opacity: 0.15;
+    }
+
+    .result-number {
+      font-size: 56px;
+      font-weight: 800;
+      background: linear-gradient(135deg, #0055ff, #00d4ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .result-label {
+      margin-top: 10px;
+      font-size: 16px;
+      color: #9ca3af;
+    }
+
+    .final-cta {
+      position: relative;
+      padding: 160px 8%;
+      background: #050505;
+      overflow: hidden;
+    }
+
+    .cta-glow {
+      position: absolute;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, #0055ff, transparent 60%);
+      filter: blur(140px);
+      top: -200px;
+      right: -200px;
+      opacity: 0.6;
+    }
+
+    .cta-content {
+      position: relative;
+      max-width: 900px;
+    }
+
+    .final-cta h2 {
+      font-size: clamp(42px, 6vw, 80px);
+      font-weight: 800;
+      line-height: 1.05;
+    }
+
+    .final-cta h2 span {
+      background: linear-gradient(135deg, #0055ff, #00d4ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .final-cta p {
+      margin-top: 24px;
+      max-width: 600px;
+      font-size: 18px;
+      color: #9ca3af;
+    }
+
+    .cta-button {
+      margin-top: 50px;
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      padding: 20px 36px;
+      font-size: 18px;
+      font-weight: 600;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #0055ff, #00d4ff);
+      color: white;
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .cta-button span {
+      transition: transform 0.3s ease;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 40px 100px rgba(0, 85, 255, 0.5);
+    }
+
+    .cta-button:hover span {
+      transform: translateX(6px);
+    }
+
+    /* ================= RESULTS / METRICS ================= */
+
+
+    /* Header */
+    .results-header {
+      max-width: 720px;
+      margin-bottom: 100px;
+    }
+
+    .results-eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      opacity: .55;
+      margin-bottom: 24px;
+    }
+
+    .results-header h2 {
+      font-size: clamp(40px, 6vw, 72px);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1;
+    }
+
+    .results-header h2 span {
+      color: #60a5fa;
+    }
+
+    .results-header p {
+      margin-top: 28px;
+      font-size: 18px;
+      line-height: 1.6;
+      opacity: .7;
+    }
+
+    /* Grid */
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 48px;
+    }
+
+    /* Card */
+    .result-card {
+      position: relative;
+      padding-top: 20px;
+    }
+
+    .result-number {
+      font-size: clamp(48px, 6vw, 96px);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1;
+    }
+
+    .result-suffix {
+      font-size: 32px;
+      margin-left: 4px;
+      color: #60a5fa;
+    }
+
+    .result-card p {
+      margin-top: 18px;
+      font-size: 15px;
+      opacity: .65;
+      max-width: 160px;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .results-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 64px 32px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .results-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .result-card p {
+        max-width: 100%;
+      }
+    }
+  </style>
+
+
+</head>
+
+<body class="relative dark:bg-dark-main-color bg-light-color text-black dark:text-[#ffffffb3] dark duration-150">
+  <div class="overlay close-video absolute w-full h-full top-0 left-0 bg-overlay z-998 duration-120 opacity-0 hidden">
+  </div>
+  <div
+    class="to-up fixed right-0 bottom-0 z-9999 flex-center cursor-pointer m-5 py-3 px-3 rounded-md duration-200 hover:shadow-dark-hover-box dark:hover:shadow-dark-hover-box bg-main-color text-white">
+    <ion-icon name="chevron-up-outline"></ion-icon>
+  </div>
+  <header class="fixed w-full top-0 left-0 duration-80 z-9999">
+    <div class="container py-6 flex items-center justify-between duration-80 text-[16px]">
+      <a href="index.html" aria-label="Home" class="w-30 sm:w-40 lg:w-43">
+        <img class="logo w-full" src="images/logo/logo.webp" alt="">
+      </a>
+      <div id="nav" class="flex items-center tb:justify-between gap-x-9">
+        <nav
+          class="z-999 flex items-center space-x-12 py-4 duration-150 max-[992px]:flex-col max-[992px]:items-start max-[992px]:absolute max-[992px]:right-0 max-[992px]:top-[71px] max-[992px]:w-[250px] max-[992px]:px-6 max-[992px]:rounded max-[992px]:shadow-md max-[992px]:dark:bg-dark-main-color max-[992px]:bg-gray-200 max-[992px]:hidden max-[992px]:opacity-0">
+          <a href="index.html#home">Accueil</a>
+          <a href="index.html#about">Á propos de nous</a>
+          <a href="index.html#services">Services</a>
+          <a class="active" href="index.html#portfolio">Portfolio</a>
+          <a href="index.html#contact">Contact</a>
+          <!-- <div class="sign md:hidden flex items-center w-full justify-between mt-5">
+                        <a href="sign-in.html" class="text-nowrap bg-gray-500">Sign In</a>
+                        <a href="sign-up.html" class="text-nowrap bg-main-color">Sign Up</a>
+                    </div> -->
+        </nav>
+        <!-- <div class="sign hidden md:flex items-center space-x-7 text-black dark:text-white mr-5">
+                    <a href="sign-in.html" class="text-nowrap">Sign In</a>
+                    <a href="sign-up.html" class="text-nowrap bg-main-color text-white py-3 px-8 md:px-9 lg:px-6 font-medium rounded-[3px] hover:contrast-125 duration-125">Sign Up</a>
+                </div> -->
+      </div>
+      <div class="icons flex-center gap-x-2 tb:gap-x-6">
+        <i class="fi fi-rr-menu-burger text-2xl translate-y-1 cursor-pointer burger min-[992px]:hidden"></i>
+        <a href="https://web.facebook.com/profile.php?id=61570029997839" target="_blank" rel="noopener noreferrer"
+          aria-label="Facebook">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </a>
+        <a href="https://www.instagram.com/lumiatechnologie?igsh=MWdocnZlZ21raXVleg==" target="_blank"
+          rel="noopener noreferrer" aria-label="Instagram">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a>
+        <a href="https://www.linkedin.com/company/lumiatechnologie/" target="_blank" rel="noopener noreferrer"
+          aria-label="LinkedIn">
+          <ion-icon name="logo-linkedin" class=" border-r-1 border-[#ffffffb3] pr-6"></ion-icon>
+        </a>
+        <i class="theme fi fi-rc-moon max-tb:translate-y-1"></i>
+      </div>
+    </div>
+  </header>
+
+  <section class="portfolio-hero">
+    <div class="hero-inner">
+
+      <span class="hero-eyebrow">Selected Work</span>
+
+      <h1 class="hero-title">
+        We design & build<br>
+        digital products<br>
+        that <span>perform</span>.
+      </h1>
+
+      <p class="hero-description">
+        Strategy, design and engineering for ambitious brands and institutions
+        worldwide.
+      </p>
+
+      <div class="hero-scroll">
+        <span>Scroll to explore</span>
+        <div class="line"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Overlay for expanded card -->
+  <div class="portfolio-overlay"></div>
+
+  <!-- Project Details Modal -->
+  <div class="project-modal" id="projectModal">
+    <div class="pm-content">
+      <div class="pm-close">&times;</div>
+      <div class="pm-media">
+        <img src="" alt="" id="pmImage">
+      </div>
+      <div class="pm-details">
+        <span
+          style="color: #60a5fa; letter-spacing: 0.1em; text-transform: uppercase; font-size: 12px; font-weight: 600; display: block; margin-bottom: 16px;"
+          id="pmCategory">Category</span>
+        <h2 style="font-size: 32px; font-weight: 700; line-height: 1.1; margin-bottom: 24px; color: white;"
+          id="pmTitle">Project Title</h2>
+        <div id="pmDescription" class="text-gray-400 leading-relaxed mb-8">
+          <!-- Content injected via JS -->
+        </div>
+        <a href="#"
+          class="inline-flex items-center justify-center bg-blue-600 text-white px-8 py-4 rounded-full font-medium hover:bg-blue-700 transition"
+          style="width: fit-content;">
+          View Live Project
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <section class="portfolio-distribution">
+    <div class="container distribution-grid">
+
+      <article class="dist-card" id="card-1">
+        <div class="dist-card-inner">
+          <div class="dist-media">
+            <img src="images/logo/Dr.Mekouar Mounia.webp" alt="">
+          </div>
+          <div class="dist-info">
+            <span>Website</span>
+            <h3>Dr Mekouar Mounia</h3>
+          </div>
+          <div class="dist-details">
+            <h3 class="text-2xl font-bold text-white mb-4"></h3>
+            <p class="text-gray-400 leading-relaxed mb-6">
+              A comprehensive digital solution designed to elevate the online presence of Dr. Mekouar Mounia.
+              We focused on creating a user-centric interface that builds trust and accessibility for patients.
+            </p>
+      </article>
+
+      <article class="dist-card" id="card-2">
+        <div class="dist-card-inner">
+          <div class="dist-media">
+            <img src="images/logo/Chama Negoce.webp" alt="">
+          </div>
+          <div class="dist-info">
+            <span>E-Commerce</span>
+            <h3>Chama Negoce</h3>
+          </div>
+          <div class="dist-details">
+            <h3 class="text-2xl font-bold text-white mb-4"></h3>
+            <p class="text-gray-400 leading-relaxed mb-6">
+              An advanced e-commerce platform built for Chama Negoce to streamline sales and inventory management.
+              Features a fully custom checkout flow and real-time stock tracking.
+            </p>
+
+      </article>
+
+      <article class="dist-card" id="card-3">
+        <div class="dist-card-inner">
+          <div class="dist-media">
+            <img src="images/logo/Syndexpress.webp" alt="">
+          </div>
+          <div class="dist-info">
+            <span>SaaS</span>
+            <h3>Syndexpress</h3>
+          </div>
+          <div class="dist-details">
+            <h3 class="text-2xl font-bold text-white mb-4"></h3>
+            <p class="text-gray-400 leading-relaxed mb-6">
+              A powerful SaaS solution for property management. Syndexpress simplifies complex workflows for syndics
+              and property managers through an intuitive dashboard.
+            </p>
+
+      </article>
+      <article class="dist-card" id="card-4">
+        <div class="dist-card-inner">
+          <div class="dist-media">
+            <img src="https://lumiatechnologie.github.io/Startup_Template/images/logo/WBDS%20Auto.webp" alt="">
+          </div>
+          <div class="dist-info">
+            <span>Website</span>
+            <h3>Dr Mekouar Mounia</h3>
+          </div>
+          <div class="dist-details">
+            <h3 class="text-2xl font-bold text-white mb-4"></h3>
+            <p class="text-gray-400 leading-relaxed mb-6">
+              Detailed description for this project goes here. Explaining the strategies and technologies involved.
+            </p>
+
+      </article>
+
+      <article class="dist-card" id="card-5">
+        <div class="dist-card-inner">
+          <div class="dist-media">
+            <img src="https://lumiatechnologie.github.io/Startup_Template/images/logo/Learn%20It%20Services.webp"
+              alt="">
+          </div>
+          <div class="dist-info">
+            <span>E-Commerce</span>
+            <h3>Chama Negoce</h3>
+          </div>
+          <div class="dist-details">
+            <h3 class="text-2xl font-bold text-white mb-4"></h3>
+            <p class="text-gray-400 leading-relaxed mb-6">
+              Detailed description for this project goes here. Explaining the strategies and technologies involved.
+            </p>
+      </article>
+
+      <article class="dist-card" id="card-6">
+        <div class="dist-card-inner">
+          <div class="dist-media">
+            <img src="https://lumiatechnologie.github.io/Startup_Template/images/logo/Lighthouse%20Law%20Firm.webp"
+              alt="">
+          </div>
+          <div class="dist-info">
+            <span>SaaS</span>
+            <h3>Syndexpress</h3>
+          </div>
+          <div class="dist-details">
+            <h3 class="text-2xl font-bold text-white mb-4"></h3>
+            <p class="text-gray-400 leading-relaxed mb-6">
+              Detailed description for this project goes here. Explaining the strategies and technologies involved.
+            </p>
+
+      </article>
+      <article class="dist-card" id="card-7">
+        <div class="dist-card-inner">
+          <div class="dist-media">
+            <img src="images/logo/Dr.Mekouar Mounia.webp" alt="">
+          </div>
+          <div class="dist-info">
+            <span>Website</span>
+            <h3>Dr Mekouar Mounia</h3>
+          </div>
+          <div class="dist-details">
+            <h3 class="text-2xl font-bold text-white mb-4"></h3>
+            <p class="text-gray-400 leading-relaxed mb-6">
+              Detailed description for this project goes here. Explaining the strategies and technologies involved.
+            </p>
+
+      </article>
+
+      <article class="dist-card" id="card-8">
+        <div class="dist-card-inner">
+          <div class="dist-media">
+            <img src="images/logo/Chama Negoce.webp" alt="">
+          </div>
+          <div class="dist-info">
+            <span>E-Commerce</span>
+            <h3>Chama Negoce</h3>
+          </div>
+          <div class="dist-details">
+            <h3 class="text-2xl font-bold text-white mb-4"></h3>
+            <p class="text-gray-400 leading-relaxed mb-6">
+              Detailed description for this project goes here. Explaining the strategies and technologies involved.
+            </p>
+
+      </article>
+
+      <article class="dist-card" id="card-9">
+        <div class="dist-card-inner">
+          <div class="dist-media">
+            <img src="images/logo/Syndexpress.webp" alt="">
+          </div>
+          <div class="dist-info">
+            <span>SaaS</span>
+            <h3>Syndexpress</h3>
+          </div>
+          <div class="dist-details">
+            <h3 class="text-2xl font-bold text-white mb-4"></h3>
+            <p class="text-gray-400 leading-relaxed mb-6">
+              Detailed description for this project goes here. Explaining the strategies and technologies involved.
+            </p>
+
+      </article>
+
+    </div>
+  </section>
+
+  <section class="results-section">
+    <div class="container">
+
+      <div class="results-header">
+        <span class="results-eyebrow">Our impact</span>
+        <h2>
+          Results that<br>
+          <span>move businesses</span>
+        </h2>
+        <p>
+          We don’t just design beautiful interfaces — we deliver measurable
+          outcomes that drive growth, trust, and performance.
+        </p>
+      </div>
+
+      <div class="results-grid">
+
+        <div class="result-card">
+          <span class="result-number" data-count="120">0</span>
+          <span class="result-suffix">+</span>
+          <p>Projects delivered</p>
+        </div>
+
+        <div class="result-card">
+          <span class="result-number" data-count="98">0</span>
+          <span class="result-suffix">%</span>
+          <p>Client satisfaction</p>
+        </div>
+
+        <div class="result-card">
+          <span class="result-number" data-count="6">0</span>
+          <span class="result-suffix">+</span>
+          <p>Years of experience</p>
+        </div>
+
+        <div class="result-card">
+          <span class="result-number" data-count="20">0</span>
+          <span class="result-suffix">+</span>
+          <p>Trusted partners</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+  <footer class="bg-white dark:bg-dark-box">
+    <div class="container">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:flex gap-10 sm:gap-y-15 py-15 tb:pt-25">
+        <div class="social lg:w-5/12">
+          <img src="images/logo/logo.webp" alt="" class="logo w-[350px]">
+          <p class="max-w-[360px] mb-8">Votre partenaire de confiance pour des créations digitales innovantes et sur
+            mesure. Transformons ensemble vos idées en réalité.</p>
+          <div class="flex items-center gap-x-6">
+            <a href="https://web.facebook.com/profile.php?id=61570029997839" target="_blank" rel="noopener noreferrer"
+              aria-label="Facebook">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+            <a href="https://www.instagram.com/lumiatechnologie?igsh=MWdocnZlZ21raXVleg==" target="_blank"
+              rel="noopener noreferrer" aria-label="Instagram">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+            <a href="https://www.linkedin.com/company/lumiatechnologie/" target="_blank" rel="noopener noreferrer"
+              aria-label="LinkedIn" class="mb-3">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </div>
+        </div>
+        <div class="links">
+          <h4>Liens utiles</h4>
+          <a href="index.html#contact">Contact</a>
+          <a href="index.html#portfolio">Portfolio</a>
+          <a href="index.html#services">Services</a>
+          <a href="index.html#about">Á propos de nous</a>
+        </div>
+        <div class="services links">
+          <h4>Services</h4>
+          <a href="index.html#services">UX/UI Design</a>
+          <a href="index.html#services">Développement Web</a>
+          <a href="index.html#services">Applications Mobiles</a>
+          <a href="index.html#services">Formation</a>
+        </div>
+        <div class="contact links">
+          <h4>Contact</h4>
+          <a href="mailto:contact@lumiatechnologie.com" class="truncate">contact@lumiatechnologie.com</a>
+          <a href="tel:+33666197344">+33 666 197 344</a>
+        </div>
+      </div>
+      <div class="h-px w-full bg-gradient-to-r from-transparent via-[#D2D8E183] dark:via-[#959CB183] to-transparent">
+      </div>
+      <div class="credits flex-center max-tb:flex-col gap-2 w-full py-8 max-[360px]:text-[14px]">
+        <div class="flex">
+          <a href="https://lumiatechnologie.com/">© 2025 LUMIA TECHNOLOGIE. Tous droits réservés.</a>
+        </div>
+      </div>
+    </div>
+
+
+
+
+  </footer>
+  <script src="JS/portfolio script.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+  <!-- GSAP -->
+  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+
+  <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/gsap@3/dist/Flip.min.js"></script>
+
+
+  <script>
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const heroTL = gsap.timeline();
+
+    heroTL
+      .from(".hero-eyebrow", {
+        y: 20,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power3.out"
+      })
+      .from(".hero-title", {
+        y: 80,
+        opacity: 0,
+        duration: 1.6,
+        ease: "power4.out"
+      }, "-=0.4")
+      .from(".hero-description", {
+        y: 30,
+        opacity: 0,
+        duration: 1.2,
+        ease: "power3.out"
+      }, "-=0.6")
+      .from(".hero-scroll", {
+        opacity: 0,
+        duration: 1,
+        ease: "power2.out"
+      }, "-=0.4");
+
+  </script>
+  <script>
+    gsap.registerPlugin(ScrollTrigger, Flip);
+
+    // 3D Tilt Effect
+    const cards = document.querySelectorAll(".dist-card");
+
+    cards.forEach(card => {
+      const inner = card.querySelector(".dist-card-inner");
+
+      card.addEventListener("mousemove", (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const xPct = (x / rect.width - 0.5) * 2;
+        const yPct = (y / rect.height - 0.5) * 2;
+
+        gsap.to(inner, {
+          rotationY: xPct * 8,
+          rotationX: -yPct * 8,
+          duration: 0.5,
+          ease: "power2.out"
+        });
+      });
+
+      card.addEventListener("mouseleave", () => {
+        gsap.to(inner, {
+          rotationY: 0,
+          rotationX: 0,
+          duration: 0.5,
+          ease: "power2.out"
+        });
+      });
+    });
+
+    // --- GOD TIER MODAL LOGIC (FLIP + BACKGROUND SCALE) ---
+    const modal = document.querySelector("#projectModal");
+    const pmContent = document.querySelector(".pm-content");
+    const pmImage = document.querySelector("#pmImage");
+    const pmCategory = document.querySelector("#pmCategory");
+    const pmTitle = document.querySelector("#pmTitle");
+    const pmDescription = document.querySelector("#pmDescription");
+    const pmClose = document.querySelector(".pm-close");
+    const pmMedia = document.querySelector(".pm-media");
+
+    // Elements to scale down in background
+    const bgElements = document.querySelectorAll("header, section, footer");
+
+    let currentCard = null;
+
+    cards.forEach(card => {
+      card.addEventListener("click", () => {
+        currentCard = card;
+        const cardImage = card.querySelector(".dist-media img");
+        const category = card.querySelector(".dist-info span").innerText;
+        const title = card.querySelector(".dist-info h3").innerText;
+        const detailsBlock = card.querySelector(".dist-details");
+
+        // 1. Populate data
+        pmCategory.innerText = category;
+        pmTitle.innerText = title;
+        pmDescription.innerHTML = detailsBlock ? (detailsBlock.querySelector("p")?.outerHTML + detailsBlock.querySelector("ul")?.outerHTML) : "Details coming soon...";
+        pmImage.src = cardImage.src;
+
+        // 2. Flip Initialization
+        // Capture initial state of the card image
+        const state = Flip.getState(cardImage);
+
+        // 3. Prepare Modal
+        modal.classList.add("open");
+        document.body.style.overflow = "hidden";
+
+        // Place the modal image where the card image was
+        Flip.from(state, {
+          duration: 0.8,
+          ease: "expo.inOut",
+          targets: pmImage,
+          scale: true
+        });
+
+        // 4. Background Scale & Modal Reveal Timeline
+        const tl = gsap.timeline();
+
+        tl.to(bgElements, {
+          scale: 0.96,
+          filter: "blur(15px)",
+          opacity: 0.5,
+          duration: 1,
+          ease: "expo.inOut"
+        }, 0);
+
+        tl.fromTo(pmContent, {
+          y: 100,
+          opacity: 0,
+          rotateX: -15
+        }, {
+          y: 0,
+          opacity: 1,
+          rotateX: 0,
+          duration: 1,
+          ease: "expo.out"
+        }, 0.2);
+
+        // Staggered text reveals
+        tl.fromTo([pmCategory, pmTitle, pmDescription, ".pm-details a"], {
+          y: 40,
+          opacity: 0
+        }, {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          stagger: 0.1,
+          ease: "power4.out"
+        }, 0.5);
+      });
+    });
+
+    const closeModal = () => {
+      if (!currentCard) return;
+
+      const cardImage = currentCard.querySelector(".dist-media img");
+      const state = Flip.getState(pmImage);
+
+      const tl = gsap.timeline({
+        onComplete: () => {
+          modal.classList.remove("open");
+          document.body.style.overflow = "";
+          currentCard = null;
+        }
+      });
+
+      tl.to([pmCategory, pmTitle, pmDescription, ".pm-details a"], {
+        y: 20,
+        opacity: 0,
+        duration: 0.4,
+        ease: "power2.in"
+      }, 0);
+
+      tl.to(pmContent, {
+        y: 60,
+        opacity: 0,
+        duration: 0.6,
+        ease: "power2.in"
+      }, 0.1);
+
+      tl.to(bgElements, {
+        scale: 1,
+        filter: "blur(0px)",
+        opacity: 1,
+        duration: 0.8,
+        ease: "expo.inOut"
+      }, 0.2);
+    };
+
+    pmClose.addEventListener("click", closeModal);
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) closeModal();
+    });
+
+    // Initial Entry Animation
+    // --- CINEMATIC LIST LOGIC ---
+    const revealContainer = document.querySelector(".hover-reveal");
+    const revealImg = document.querySelector(".reveal-img");
+    const projectItems = document.querySelectorAll(".project-item");
+
+    // Mouse Tracking state
+    let mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+    let current = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+
+    // Update target mouse position
+    window.addEventListener("mousemove", (e) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    });
+
+    // Lerp loop for smooth following
+    const lerp = (a, b, n) => (1 - n) * a + n * b;
+
+    const animateReveal = () => {
+      current.x = lerp(current.x, mouse.x, 0.1);
+      current.y = lerp(current.y, mouse.y, 0.1);
+
+      if (revealContainer) {
+        revealContainer.style.transform = `translate(${current.x - 225}px, ${current.y - 160}px) rotate(${(mouse.x - current.x) * 0.05}deg)`;
+      }
+
+      if (revealImg) {
+        revealImg.style.transform = `scale(1.2) translate(${(current.x - mouse.x) * 0.05}px, ${(current.y - mouse.y) * 0.05}px)`;
+      }
+
+      requestAnimationFrame(animateReveal);
+    };
+    animateReveal();
+
+    // Hover logic
+    projectItems.forEach(item => {
+      item.addEventListener("mouseenter", () => {
+        // Swap Image
+        const imgSrc = item.getAttribute("data-img");
+        if (revealImg.src !== imgSrc) {
+          revealImg.src = imgSrc;
+
+          // Kinetic Burst on swap
+          const turbulence = document.querySelector("#liquidFilter feTurbulence");
+          const displacement = document.querySelector("#liquidFilter feDisplacementMap");
+
+          gsap.fromTo(displacement, { scale: 50 }, { scale: 0, duration: 0.8, ease: "power2.out" });
+        }
+
+        // Show Reveal
+        revealContainer.classList.add("active");
+        revealContainer.style.opacity = 1;
+      });
+
+      item.addEventListener("mouseleave", () => {
+        revealContainer.classList.remove("active");
+        revealContainer.style.opacity = 0;
+      });
+    });
+  </script>
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Intro
+    gsap.from(".partners-header h2", {
+      y: 40,
+      opacity: 0,
+      duration: 1.2,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".partners-cinematic",
+        start: "top 80%"
+      }
+    });
+
+    gsap.from(".partners-header p", {
+      y: 20,
+      opacity: 0,
+      duration: 1,
+      delay: .1,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: ".partners-cinematic",
+        start: "top 80%"
+      }
+    });
+
+    // Infinite cinematic drift
+    gsap.to(".row-1", {
+      x: "-=300",
+      duration: 40,
+      ease: "none",
+      repeat: -1
+    });
+
+    gsap.to(".row-2", {
+      x: "+=300",
+      duration: 50,
+      ease: "none",
+      repeat: -1
+    });
+
+    gsap.to(".row-3", {
+      x: "-=300",
+      duration: 45,
+      ease: "none",
+      repeat: -1
+    });
+
+    // Scroll depth
+    gsap.to(".partners-stage", {
+      y: -80,
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".partners-cinematic",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 1
+      }
+    });
+  </script>
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    document.querySelectorAll(".result-number").forEach(number => {
+      const target = +number.dataset.count;
+
+      gsap.fromTo(number,
+        { innerText: 0 },
+        {
+          innerText: target,
+          duration: 2,
+          ease: "power3.out",
+          snap: { innerText: 1 },
+          scrollTrigger: {
+            trigger: ".results-section",
+            start: "top 70%",
+            once: true
+          }
+        }
+      );
+    });
+  </script>
+
+
+
+</body>
+
+</html>
