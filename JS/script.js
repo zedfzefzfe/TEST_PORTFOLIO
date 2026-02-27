@@ -1,8 +1,6 @@
 // Element selectors
 let theme_btn = document.querySelector(".theme") // theme toggle button
 let logo = document.querySelectorAll(".logo") // all logo images
-let hero_1 = document.querySelector(".hero-1")
-let hero_2 = document.querySelector(".hero-2")
 let about_img_1 = document.querySelector(".about-img-1") // about image 1
 let about_img_2 = document.querySelector(".about-img-2") // about image 2
 let side_menu = document.querySelector("nav") // side navigation
@@ -13,28 +11,20 @@ let nav_ele = document.querySelectorAll("nav a") // nav links
 let up_btn = document.querySelector(".to-up") // scroll to top button
 let fieldsets = document.querySelectorAll('#about fieldset')
 let legends = document.querySelectorAll('#about legend')
-let close_video = document.querySelectorAll(".close-video") // video close buttons
-let embed_video = document.querySelector(".embed") // video embed container
-let iframe = document.querySelector("iframe") // video iframe
-let play_btn = document.querySelector(".play-btn") // play video button
-let overlay = document.querySelector(".overlay") // page overlay
-let radio = document.querySelector(".radio") // subscription toggle
-let sub_type = document.querySelectorAll(".sub-type span") // subscription labels
-let radio_circle = document.querySelector(".outer-circle") // toggle circle
-let price = document.querySelectorAll(".price h3") // price values
-let price_period = document.querySelectorAll(".subs .price span") // price period labels
 
 // Initialize theme from localStorage
-if (localStorage.theme == "light") {
-    document.body.classList.remove("dark")
-    pic_theme()
-    theme_btn.classList.remove("fi-rc-moon")
-    theme_btn.classList.add("fi-rs-brightness")
-} else {
-    document.body.classList.add("dark")
-    pic_theme()
-    theme_btn.classList.add("fi-rc-moon")
-    theme_btn.classList.remove("fi-rs-brightness")
+if (theme_btn) {
+    if (localStorage.theme == "light") {
+        document.body.classList.remove("dark")
+        pic_theme()
+        theme_btn.classList.remove("fi-rc-moon")
+        theme_btn.classList.add("fi-rs-brightness")
+    } else {
+        document.body.classList.add("dark")
+        pic_theme()
+        theme_btn.classList.add("fi-rc-moon")
+        theme_btn.classList.remove("fi-rs-brightness")
+    }
 }
 
 // Update images based on theme
@@ -43,71 +33,64 @@ function pic_theme() {
         logo.forEach(logo => {
             logo.src = "images/logo/logo-alt.webp"
         })
-        about_img_1.src = "images/about/about-image.svg"
-        about_img_2.src = "images/about/about-image-2.svg"
-        // hero_1.src = "images/hero/shape-1.svg"
-        // hero_2.src = "images/hero/shape-2.svg"
+        if (about_img_1) about_img_1.src = "images/about/about-image.svg"
+        if (about_img_2) about_img_2.src = "images/about/about-image-2.svg"
     } else {
         logo.forEach(logo => {
             logo.src = "images/logo/logo.webp"
         })
-        about_img_1.src = "images/about/about-image-dark.svg"
-        about_img_2.src = "images/about/about-image-2-dark.svg"
-        // hero_1.src = "images/hero/shape-1-dark.svg"
-        // hero_2.src = "images/hero/shape-2-dark.svg"
+        if (about_img_1) about_img_1.src = "images/about/about-image-dark.svg"
+        if (about_img_2) about_img_2.src = "images/about/about-image-2-dark.svg"
     }
 }
 
 // scroll to top
-up_btn.addEventListener("click", () => {
-    window.scrollTo(0, 0)
-})
+if (up_btn) {
+    up_btn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" })
+    })
+}
 
 // toggle theme on click and save choice
-theme_btn.addEventListener("click", () => {
-    document.body.classList.toggle("dark")
-    theme_btn.classList.toggle("fi-rc-moon")
-    theme_btn.classList.toggle("fi-rs-brightness")
-    pic_theme()
-    if (!document.body.classList.contains("dark")) {
-        localStorage.theme = "light"
-    } else {
-        localStorage.theme = "dark"
-    }
-})
-
-// highlight active nav link
-nav_ele.forEach(ele => {
-    ele.addEventListener("click", () => {
-        nav_ele.forEach(a => {
-            a.classList.remove("active")
-        })
-        ele.classList.add("active")
-        side_menu_toggle()
+if (theme_btn) {
+    theme_btn.addEventListener("click", () => {
+        document.body.classList.toggle("dark")
+        theme_btn.classList.toggle("fi-rc-moon")
+        theme_btn.classList.toggle("fi-rs-brightness")
+        pic_theme()
+        if (!document.body.classList.contains("dark")) {
+            localStorage.theme = "light"
+        } else {
+            localStorage.theme = "dark"
+        }
     })
-})
+}
 
 // open/close side menu (mobile)
-side_menu_btn.addEventListener("click", side_menu_toggle)
+if (side_menu_btn) {
+    side_menu_btn.addEventListener("click", side_menu_toggle)
+}
 
-function side_menu_toggle(){
+function side_menu_toggle() {
+    if (!side_menu) return
     if (side_menu.classList.contains("max-[992px]:hidden")) {
         side_menu.classList.toggle("max-[992px]:hidden")
         setTimeout(() => {
             side_menu.classList.toggle("max-[992px]:opacity-0")
             side_menu.classList.toggle("max-[992px]:opacity-100")
-        }, 150);
+        }, 150)
     } else {
         side_menu.classList.toggle("max-[992px]:opacity-0")
         side_menu.classList.toggle("max-[992px]:opacity-100")
         setTimeout(() => {
             side_menu.classList.toggle("max-[992px]:hidden")
-        }, 150);
+        }, 150)
     }
 }
 
 // header style on scroll
 function HeaderEffect() {
+    if (!header || !header_container) return
     if (window.pageYOffset > 10) {
         header_container.classList.remove("py-6")
         header_container.classList.add("tb:py-3", "py-4")
@@ -119,54 +102,118 @@ function HeaderEffect() {
     }
 }
 
+HeaderEffect()
 window.addEventListener('scroll', HeaderEffect)
 
-// close video modal
-// close_video.forEach(ele => {
-//     ele.addEventListener("click", () => {
-//         embed_video.classList.remove("opacity-100")
-//         overlay.classList.remove("opacity-100")
-//         embed_video.classList.add("opacity-0")
-//         overlay.classList.add("opacity-0")
-//         setTimeout(() => {
-//             embed_video.classList.remove("flex")
-//             embed_video.classList.add("hidden")
-//             overlay.classList.add("hidden")
-//             iframe.setAttribute('src', "https://www.youtube.com/embed/IxX_QHay02M?list=RDIxX_QHay02M");
-//         }, 120);
-//     })
-// });
+// Scrollspy for nav links
+const trackedSections = [...document.querySelectorAll("main[id], section[id]")]
+if (trackedSections.length && nav_ele.length) {
+    const spy = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return
+            const id = entry.target.id
+            nav_ele.forEach(link => {
+                const isCurrent = link.getAttribute("href") === `#${id}`
+                link.classList.toggle("active", isCurrent)
+            })
+        })
+    }, { threshold: 0.45 })
 
-// // open video modal and autoplay
-// play_btn.addEventListener("click", () => {
-//     embed_video.classList.remove("hidden")
-//     embed_video.classList.add("flex")
-//     overlay.classList.remove("hidden")
-//     setTimeout(() => {
-//         embed_video.classList.remove("opacity-0")
-//         overlay.classList.remove("opacity-0")
-//         embed_video.classList.add("opacity-100")
-//         overlay.classList.add("opacity-100")
-//         iframe.setAttribute('src', "https://www.youtube.com/embed/IxX_QHay02M?list=RDIxX_QHay02M&autoplay=1&cc_load_policy=1&controls=1&disablekb=0&enablejsapi=0&fs=1&iv_load_policy=1&loop=0&rel=0&showinfo=1&start=0&wmode=transparent&theme=dark");
-//     }, 120);
-// })
+    trackedSections.forEach(section => spy.observe(section))
+
+    nav_ele.forEach(ele => {
+        ele.addEventListener("click", () => {
+            if (window.innerWidth < 992) side_menu_toggle()
+        })
+    })
+}
 
 // Toggle accordion for about section Q&A
 legends.forEach(legend => {
-    // Add click event listener to each legend element
     legend.addEventListener('click', () => {
-        // Find the closest fieldset parent and toggle the 'open' class
-        const fieldset = legend.closest('fieldset');
-        fieldset.classList.toggle('open');
-        fieldset.classList.toggle('active');
+        const fieldset = legend.closest('fieldset')
+        fieldset.classList.toggle('open')
+        fieldset.classList.toggle('active')
 
-        // Close other fieldsets when one opens with height animation
         fieldsets.forEach(fs => {
             if (fs !== fieldset) {
-                fs.classList.remove('open');
-                fs.classList.remove('active');
+                fs.classList.remove('open')
+                fs.classList.remove('active')
             }
-        });
-    });
-});
+        })
+    })
+})
 
+// Typing effect in hero title
+const heroDynamicText = document.querySelector("#hero-dynamic-text")
+if (heroDynamicText) {
+    const words = ["solutions digitales", "expériences web", "applications mobiles", "plateformes SaaS"]
+    let wordIndex = 0
+    let charIndex = 0
+    let deleting = false
+
+    const typeLoop = () => {
+        const currentWord = words[wordIndex]
+        heroDynamicText.textContent = deleting
+            ? currentWord.slice(0, charIndex--)
+            : currentWord.slice(0, charIndex++)
+
+        if (!deleting && charIndex === currentWord.length + 1) {
+            deleting = true
+            return setTimeout(typeLoop, 1300)
+        }
+
+        if (deleting && charIndex < 0) {
+            deleting = false
+            wordIndex = (wordIndex + 1) % words.length
+        }
+
+        setTimeout(typeLoop, deleting ? 45 : 85)
+    }
+
+    typeLoop()
+}
+
+// Counter animation for insight cards
+const counters = document.querySelectorAll("[data-count]")
+if (counters.length) {
+    const counterObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return
+            const target = entry.target
+            const endValue = Number(target.dataset.count)
+            const suffix = target.dataset.suffix || ""
+            let current = 0
+            const step = Math.max(1, Math.ceil(endValue / 55))
+
+            const tick = () => {
+                current = Math.min(endValue, current + step)
+                target.textContent = `${current}${suffix}`
+                if (current < endValue) requestAnimationFrame(tick)
+            }
+
+            tick()
+            observer.unobserve(target)
+        })
+    }, { threshold: 0.5 })
+
+    counters.forEach(counter => counterObserver.observe(counter))
+}
+
+// Reveal animation for major cards
+const revealTargets = document.querySelectorAll("#services .box, #clients .box, #portfolio .box, #insights .insight-card")
+if (revealTargets.length) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return
+            entry.target.classList.add("is-visible")
+            observer.unobserve(entry.target)
+        })
+    }, { threshold: 0.15 })
+
+    revealTargets.forEach((target, index) => {
+        target.classList.add("reveal-element")
+        target.style.transitionDelay = `${Math.min(index * 60, 240)}ms`
+        revealObserver.observe(target)
+    })
+}
