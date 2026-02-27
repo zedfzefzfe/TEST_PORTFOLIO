@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npx @tailwindcss/cli -i ./CSS/style.css -o ./CSS/output.css --watch",
-    "minify": "npx @tailwindcss/cli -i ./CSS/style.css -o ./CSS/output.css --minify"
+    "minify": "npx @tailwindcss/cli -i ./CSS/style.css -o ./CSS/output.css --minify",
+    "start": "python3 -m http.server 4173",
+    "preview": "python3 -m http.server 4173"
   },
   "keywords": [],
   "author": "",

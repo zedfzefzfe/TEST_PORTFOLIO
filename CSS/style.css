@@ -416,6 +416,46 @@ footer .credits div{
     @apply text-main-color
 } */
 
+#hero-dynamic-text::after {
+    content: "|";
+    margin-left: 0.25rem;
+    color: #274CE3;
+    animation: blink-caret 0.9s steps(1) infinite;
+}
+
+@keyframes blink-caret {
+    50% {
+        opacity: 0;
+    }
+}
+
+#insights .insight-card {
+    @apply bg-white dark:bg-dark-box rounded-sm px-6 py-7 shadow-box-shadow border border-transparent hover:border-main-color/50 duration-200;
+}
+
+#insights .insight-card p {
+    @apply text-main-text text-sm uppercase tracking-[0.12em] font-semibold mb-2;
+}
+
+#insights .insight-card h3 {
+    @apply text-4xl font-bold text-main-color dark:text-white;
+}
+
+#insights .insight-card span {
+    @apply text-main-text-alt text-sm;
+}
+
+.reveal-element {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.reveal-element.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .container {
     width: 100%;
     margin-right: auto;
